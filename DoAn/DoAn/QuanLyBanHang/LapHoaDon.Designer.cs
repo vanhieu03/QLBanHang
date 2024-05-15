@@ -57,16 +57,24 @@
             this.btthem = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtthanhtoan = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtsdt = new System.Windows.Forms.ComboBox();
+            this.txttenkhachhang = new System.Windows.Forms.TextBox();
+            this.txtmakh = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvhoadon)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvhoadon);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(31, 400);
+            this.groupBox2.Location = new System.Drawing.Point(31, 565);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1114, 301);
             this.groupBox2.TabIndex = 2;
@@ -75,7 +83,6 @@
             // 
             // dgvhoadon
             // 
-            this.dgvhoadon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvhoadon.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvhoadon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvhoadon.Location = new System.Drawing.Point(25, 40);
@@ -88,7 +95,7 @@
             // btsua
             // 
             this.btsua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btsua.Location = new System.Drawing.Point(251, 789);
+            this.btsua.Location = new System.Drawing.Point(239, 884);
             this.btsua.Name = "btsua";
             this.btsua.Size = new System.Drawing.Size(133, 53);
             this.btsua.TabIndex = 3;
@@ -98,7 +105,7 @@
             // btxoa
             // 
             this.btxoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btxoa.Location = new System.Drawing.Point(426, 789);
+            this.btxoa.Location = new System.Drawing.Point(414, 884);
             this.btxoa.Name = "btxoa";
             this.btxoa.Size = new System.Drawing.Size(133, 53);
             this.btxoa.TabIndex = 4;
@@ -108,7 +115,7 @@
             // btthanhtoan
             // 
             this.btthanhtoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btthanhtoan.Location = new System.Drawing.Point(776, 789);
+            this.btthanhtoan.Location = new System.Drawing.Point(764, 884);
             this.btthanhtoan.Name = "btthanhtoan";
             this.btthanhtoan.Size = new System.Drawing.Size(133, 53);
             this.btthanhtoan.TabIndex = 5;
@@ -140,6 +147,7 @@
             this.txtmasp.Name = "txtmasp";
             this.txtmasp.Size = new System.Drawing.Size(246, 30);
             this.txtmasp.TabIndex = 2;
+            this.txtmasp.TextChanged += new System.EventHandler(this.txtmasp_TextChanged);
             // 
             // txttensp
             // 
@@ -166,12 +174,12 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(31, 93);
+            this.groupBox1.Location = new System.Drawing.Point(31, 264);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1027, 283);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Nhập thông tin sản phẩm";
+            this.groupBox1.Text = "Thông tin sản phẩm";
             // 
             // txtdg
             // 
@@ -279,7 +287,7 @@
             // txtthoigian
             // 
             this.txtthoigian.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtthoigian.Location = new System.Drawing.Point(519, 45);
+            this.txtthoigian.Location = new System.Drawing.Point(519, 46);
             this.txtthoigian.Name = "txtthoigian";
             this.txtthoigian.Size = new System.Drawing.Size(246, 30);
             this.txtthoigian.TabIndex = 8;
@@ -297,7 +305,7 @@
             // btdong
             // 
             this.btdong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btdong.Location = new System.Drawing.Point(951, 789);
+            this.btdong.Location = new System.Drawing.Point(939, 884);
             this.btdong.Name = "btdong";
             this.btdong.Size = new System.Drawing.Size(133, 53);
             this.btdong.TabIndex = 10;
@@ -307,7 +315,7 @@
             // btlammoi
             // 
             this.btlammoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btlammoi.Location = new System.Drawing.Point(601, 789);
+            this.btlammoi.Location = new System.Drawing.Point(589, 884);
             this.btlammoi.Name = "btlammoi";
             this.btlammoi.Size = new System.Drawing.Size(133, 53);
             this.btlammoi.TabIndex = 11;
@@ -317,7 +325,7 @@
             // btthem
             // 
             this.btthem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btthem.Location = new System.Drawing.Point(76, 789);
+            this.btthem.Location = new System.Drawing.Point(64, 884);
             this.btthem.Name = "btthem";
             this.btthem.Size = new System.Drawing.Size(133, 53);
             this.btthem.TabIndex = 12;
@@ -343,12 +351,80 @@
             this.txtthanhtoan.Size = new System.Drawing.Size(246, 30);
             this.txtthanhtoan.TabIndex = 14;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txtsdt);
+            this.groupBox3.Controls.Add(this.txttenkhachhang);
+            this.groupBox3.Controls.Add(this.txtmakh);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(31, 94);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1027, 164);
+            this.groupBox3.TabIndex = 15;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Thông tin khách hàng";
+            // 
+            // txtsdt
+            // 
+            this.txtsdt.FormattingEnabled = true;
+            this.txtsdt.Location = new System.Drawing.Point(615, 41);
+            this.txtsdt.Name = "txtsdt";
+            this.txtsdt.Size = new System.Drawing.Size(206, 33);
+            this.txtsdt.TabIndex = 6;
+            this.txtsdt.SelectedIndexChanged += new System.EventHandler(this.txtsdt_SelectedIndexChanged);
+            this.txtsdt.TextChanged += new System.EventHandler(this.txtsdt_TextChanged);
+            // 
+            // txttenkhachhang
+            // 
+            this.txttenkhachhang.Location = new System.Drawing.Point(207, 109);
+            this.txttenkhachhang.Name = "txttenkhachhang";
+            this.txttenkhachhang.Size = new System.Drawing.Size(246, 30);
+            this.txttenkhachhang.TabIndex = 5;
+            // 
+            // txtmakh
+            // 
+            this.txtmakh.Location = new System.Drawing.Point(207, 54);
+            this.txtmakh.Name = "txtmakh";
+            this.txtmakh.Size = new System.Drawing.Size(246, 30);
+            this.txtmakh.TabIndex = 4;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(498, 49);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(53, 25);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "SDT";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(35, 109);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(154, 25);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Tên khách hàng";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(35, 54);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(147, 25);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Mã khách hàng";
+            // 
             // LapHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PapayaWhip;
-            this.ClientSize = new System.Drawing.Size(1195, 875);
+            this.ClientSize = new System.Drawing.Size(1195, 949);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.txtthanhtoan);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btthem);
@@ -372,6 +448,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvhoadon)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -407,5 +485,12 @@
         private System.Windows.Forms.Label txtdongia;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtthanhtoan;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox txttenkhachhang;
+        private System.Windows.Forms.TextBox txtmakh;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox txtsdt;
     }
 }
