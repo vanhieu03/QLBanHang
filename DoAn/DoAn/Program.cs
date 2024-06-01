@@ -1,4 +1,5 @@
-﻿using DoAn.QuanLyBanHang;
+﻿using DoAn.BaoCaoThongKe;
+using DoAn.QuanLyBanHang;
 using DoAn.QuanLyKho;
 using System;
 using System.Collections.Generic;

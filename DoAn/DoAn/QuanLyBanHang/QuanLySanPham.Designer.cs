@@ -44,10 +44,10 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvsp);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(28, 224);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1048, 313);
+            this.groupBox2.Size = new System.Drawing.Size(1138, 440);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kết quả tìm kiếm";
@@ -56,19 +56,19 @@
             // 
             this.dgvsp.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvsp.Location = new System.Drawing.Point(20, 29);
+            this.dgvsp.Location = new System.Drawing.Point(6, 38);
             this.dgvsp.Name = "dgvsp";
             this.dgvsp.RowHeadersWidth = 62;
             this.dgvsp.RowTemplate.Height = 28;
-            this.dgvsp.Size = new System.Drawing.Size(1022, 278);
+            this.dgvsp.Size = new System.Drawing.Size(1126, 396);
             this.dgvsp.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(402, 134);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 51);
+            this.button1.Size = new System.Drawing.Size(156, 64);
             this.button1.TabIndex = 4;
             this.button1.Text = "Tìm kiếm";
             this.button1.UseVisualStyleBackColor = true;
@@ -76,10 +76,10 @@
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(832, 132);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(141, 51);
+            this.button2.Size = new System.Drawing.Size(156, 64);
             this.button2.TabIndex = 5;
             this.button2.Text = "Đóng";
             this.button2.UseVisualStyleBackColor = true;
@@ -88,52 +88,53 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(44, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 25);
+            this.label1.Size = new System.Drawing.Size(191, 32);
             this.label1.TabIndex = 6;
             this.label1.Text = "Tìm kiếm theo";
             // 
             // cbtimkiem
             // 
+            this.cbtimkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbtimkiem.FormattingEnabled = true;
             this.cbtimkiem.Items.AddRange(new object[] {
-            "Mã sản phẩm",
-            "Tên sản phầm",
+            "Tên sản phẩm",
             "Màu sắc",
             "Kích thước",
             "Số lượng",
             "Đơn giá"});
-            this.cbtimkiem.Location = new System.Drawing.Point(199, 61);
+            this.cbtimkiem.Location = new System.Drawing.Point(241, 56);
             this.cbtimkiem.Name = "cbtimkiem";
-            this.cbtimkiem.Size = new System.Drawing.Size(190, 28);
+            this.cbtimkiem.Size = new System.Drawing.Size(225, 40);
             this.cbtimkiem.TabIndex = 7;
             // 
             // txttimkiem
             // 
-            this.txttimkiem.Location = new System.Drawing.Point(598, 61);
-            this.txttimkiem.Multiline = true;
+            this.txttimkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttimkiem.Location = new System.Drawing.Point(683, 56);
             this.txttimkiem.Name = "txttimkiem";
-            this.txttimkiem.Size = new System.Drawing.Size(212, 28);
+            this.txttimkiem.Size = new System.Drawing.Size(230, 39);
             this.txttimkiem.TabIndex = 8;
+            this.txttimkiem.TextChanged += new System.EventHandler(this.txttimkiem_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(474, 64);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(536, 63);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 25);
+            this.label2.Size = new System.Drawing.Size(116, 32);
             this.label2.TabIndex = 9;
             this.label2.Text = "Từ khóa";
             // 
             // txtlammoi
             // 
-            this.txtlammoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtlammoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtlammoi.Location = new System.Drawing.Point(617, 134);
             this.txtlammoi.Name = "txtlammoi";
-            this.txtlammoi.Size = new System.Drawing.Size(141, 51);
+            this.txtlammoi.Size = new System.Drawing.Size(156, 64);
             this.txtlammoi.TabIndex = 10;
             this.txtlammoi.Text = "Làm mới";
             this.txtlammoi.UseVisualStyleBackColor = true;
@@ -143,8 +144,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.PapayaWhip;
-            this.ClientSize = new System.Drawing.Size(1088, 613);
+            this.ClientSize = new System.Drawing.Size(1210, 700);
             this.Controls.Add(this.txtlammoi);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txttimkiem);

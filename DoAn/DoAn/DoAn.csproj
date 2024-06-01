@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,6 +49,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,12 +62,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaoCaoThongKe\BaoCaoDoanhThu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaoCaoThongKe\BaoCaoDoanhThu.Designer.cs">
-      <DependentUpon>BaoCaoDoanhThu.cs</DependentUpon>
-    </Compile>
     <Compile Include="BaoCaoThongKe\ThongKeBanHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,29 +100,11 @@
     <Compile Include="QuanLyBanHang\NhapThongTinKhachHang.Designer.cs">
       <DependentUpon>NhapThongTinKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyBanHang\TaoTheThanhVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyBanHang\TaoTheThanhVien.Designer.cs">
-      <DependentUpon>TaoTheThanhVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyBanHang\ThanhToanChoKhachHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyBanHang\ThanhToanChoKhachHang.Designer.cs">
-      <DependentUpon>ThanhToanChoKhachHang.cs</DependentUpon>
-    </Compile>
     <Compile Include="QuanLyBanHang\TimHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QuanLyBanHang\TimHoaDon.Designer.cs">
       <DependentUpon>TimHoaDon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyBanHang\HienThiThongTinKhachHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyBanHang\HienThiThongTinKhachHang.Designer.cs">
-      <DependentUpon>HienThiThongTinKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLyBanHang\TongHopDuLieuBanHang.cs">
       <SubType>Form</SubType>
@@ -125,12 +117,6 @@
     </Compile>
     <Compile Include="QuanLyBanHang\NhapThongTinSuCo.Designer.cs">
       <DependentUpon>NhapThongTinSuCo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyKho\CapNhatTonKho.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyKho\CapNhatTonKho.Designer.cs">
-      <DependentUpon>CapNhatTonKho.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLyKho\DatHangNhaCungCap.cs">
       <SubType>Form</SubType>
@@ -168,9 +154,6 @@
     <Compile Include="QuanLyKho\HienThiHoaDonNhaCungCap.Designer.cs">
       <DependentUpon>HienThiHoaDonNhaCungCap.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BaoCaoThongKe\BaoCaoDoanhThu.resx">
-      <DependentUpon>BaoCaoDoanhThu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BaoCaoThongKe\ThongKeBanHang.resx">
       <DependentUpon>ThongKeBanHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,26 +181,14 @@
     <EmbeddedResource Include="QuanLyBanHang\NhapThongTinKhachHang.resx">
       <DependentUpon>NhapThongTinKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyBanHang\TaoTheThanhVien.resx">
-      <DependentUpon>TaoTheThanhVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyBanHang\ThanhToanChoKhachHang.resx">
-      <DependentUpon>ThanhToanChoKhachHang.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="QuanLyBanHang\TimHoaDon.resx">
       <DependentUpon>TimHoaDon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyBanHang\HienThiThongTinKhachHang.resx">
-      <DependentUpon>HienThiThongTinKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyBanHang\TongHopDuLieuBanHang.resx">
       <DependentUpon>TongHopDuLieuBanHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyBanHang\NhapThongTinSuCo.resx">
       <DependentUpon>NhapThongTinSuCo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyKho\CapNhatTonKho.resx">
-      <DependentUpon>CapNhatTonKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyKho\DatHangNhaCungCap.resx">
       <DependentUpon>DatHangNhaCungCap.cs</DependentUpon>
@@ -249,6 +220,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

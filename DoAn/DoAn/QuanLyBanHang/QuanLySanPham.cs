@@ -15,6 +15,7 @@ namespace DoAn.QuanLyBanHang
     {
         SqlConnection cn;
         String chuoiketnoi = @"Data Source=DESKTOP-NQC7O0B;Initial Catalog=QLBanHang;Integrated Security=True";
+        //String chuoiketnoi = System.Configuration.ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
         SqlCommand cmd;
         SqlDataAdapter dta = new SqlDataAdapter();
         DataTable dt = new DataTable();
@@ -25,7 +26,14 @@ namespace DoAn.QuanLyBanHang
         public void loaddata()
         {
             cmd = cn.CreateCommand();
-            cmd.CommandText = "SELECT * FROM ThongTinSanPham";
+            cmd.CommandText = @"SELECT 
+            MaSanPham AS [Mã Sản Phẩm],
+            TenSanPham AS [Tên Sản Phẩm],
+            MauSac AS [Màu Sắc],
+            KichThuoc AS [Kích Thước],
+            SoLuong AS [Số Lượng],
+            DonGia AS [Đơn Giá]
+            FROM ThongTinSanPham";
             dta.SelectCommand = cmd;
             dt.Clear();
             dta.Fill(dt);
@@ -33,14 +41,18 @@ namespace DoAn.QuanLyBanHang
         }
         private void QuanLySanPham_Load(object sender, EventArgs e)
         {
-            cbtimkiem.Text = "Mã sản phẩm";
             cn = new SqlConnection(chuoiketnoi);
             cn.Open();
             loaddata();
         }
         public void timkiem(String keywords, String searchText)
         {
-            cmd = new SqlCommand($"SELECT* FROM ThongTinSanPham WHERE {keywords} like @searchText", cn);
+            cmd = new SqlCommand(@"SELECT MaSanPham AS [Mã Sản Phẩm],
+            TenSanPham AS [Tên Sản Phẩm],
+            MauSac AS [Màu Sắc],
+            KichThuoc AS [Kích Thước],
+            SoLuong AS [Số Lượng],
+            DonGia AS [Đơn Giá] FROM ThongTinSanPham WHERE "+ keywords +" like @searchText", cn);
             cmd.Parameters.AddWithValue("@searchText", "%"+ searchText +"%");
             dta.SelectCommand = cmd;
             dt.Clear();
@@ -53,9 +65,6 @@ namespace DoAn.QuanLyBanHang
             String keywords = cbtimkiem.Text;
             switch (keywords)
             {
-                case "Mã sản phẩm":
-                    keywords = "MaSanPham";
-                    break;
                 case "Tên sản phẩm":
                     keywords = "TenSanPham";
                     break;
@@ -87,6 +96,31 @@ namespace DoAn.QuanLyBanHang
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txttimkiem_TextChanged(object sender, EventArgs e)
+        {
+            String text = txttimkiem.Text;
+            String keywords = cbtimkiem.Text;
+            switch (keywords)
+            {
+                case "Tên sản phẩm":
+                    keywords = "TenSanPham";
+                    break;
+                case "Màu sắc":
+                    keywords = "MauSac";
+                    break;
+                case "Kích thước":
+                    keywords = "KichThuoc";
+                    break;
+                case "Số lượng":
+                    keywords = "SoLuong";
+                    break;
+                case "Đơn giá":
+                    keywords = "DonGia";
+                    break;
+            }
+            timkiem(keywords, text);
         }
     }
 }

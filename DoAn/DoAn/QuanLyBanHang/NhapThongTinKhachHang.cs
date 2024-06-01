@@ -13,17 +13,30 @@ using System.Collections;
 
 namespace DoAn.QuanLyBanHang
 {
+    
     public partial class _1 : Form
     {
         SqlConnection cn;
         SqlCommand cmd;
-        String chuoiketnoi = @"Data Source=DESKTOP-NQC7O0B;Initial Catalog=QLBanHang;Integrated Security=True";
+        String chuoiketnoi = @"Data Source=.;Initial Catalog=QLBanHang;Integrated Security=True";
+        //String chuoiketnoi = System.Configuration.ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
         SqlDataAdapter dta = new SqlDataAdapter();
         DataTable dt = new DataTable();
         public void loaddata()
         {
             cmd = cn.CreateCommand();
-            cmd.CommandText = "SELECT * FROM ThongTinKhachHang";
+            cmd.CommandText = @"SELECT 
+                MaKhachHang AS [Mã khách hàng],
+                TenKhachHang AS [Tên khách hàng],
+                NgaySinh AS [Ngày sinh],
+                SDT AS [Số điện thoại],
+                DiaChi AS [Địa chỉ],
+                MaThongTinLienHe AS [Mã thông tin liên hệ],
+                MaTheThanhVien AS [Mã thẻ thành viên],
+                DanhTinh AS [Danh tính]
+            FROM 
+                ThongTinKhachHang;
+            ";
             dta.SelectCommand = cmd;
             dt.Clear();
             dta.Fill(dt);
@@ -34,6 +47,7 @@ namespace DoAn.QuanLyBanHang
         {
             InitializeComponent();
         }
+        private int lastCode = 0;
         private void _1_Load(object sender, EventArgs e)
         {
             cbtimkiem.Text = "Mã khách hàng";
@@ -41,9 +55,27 @@ namespace DoAn.QuanLyBanHang
             cn.Open();
             //Tạo ra đối tượng random
             Random rd = new Random();
-            //tạo số ngẫu nhiên từ 0 đến 99999
-            int randomNumber1 = rd.Next(100000);
-            int randomNumber2 = rd.Next(100000,1000000);
+            int randomCode;
+            int randomNumber1;
+            int randomNumber2;
+            do
+            {
+                randomCode = rd.Next(100000, 1000000); // Tạo mã từ 100000 đến 999999
+            } while (randomCode == lastCode); // Đảm bảo mã mới không trùng với mã cuối cùng
+
+            lastCode = randomCode; // Lưu trữ mã này để kiểm tra lần sau
+            txtmakh.Text = randomCode.ToString();
+            do
+            {
+                randomNumber1 = rd.Next(100000, 1000000);
+            } while (randomNumber1 == lastCode || randomNumber1 == randomCode);
+
+            // Tạo số thẻ thành viên ngẫu nhiên không trùng lặp
+            do
+            {
+                randomNumber2 = rd.Next(100000, 1000000);
+            } while (randomNumber2 == lastCode || randomNumber2 == randomCode || randomNumber2 == randomNumber1);
+
             txtttlienhe.Text = randomNumber1.ToString();
             txttthanhvien.Text = randomNumber2.ToString();
             loaddata();
@@ -81,6 +113,9 @@ namespace DoAn.QuanLyBanHang
 
         private void button2_Click(object sender, EventArgs e)
         {
+            txtmakh.ReadOnly = false;
+            txtttlienhe.ReadOnly = false;
+            txttthanhvien.ReadOnly = false;
             txtmakh.Text = "";
             txttenkh.Text = "";
             txt_ngaysinh.Text = "1/1/1990";
@@ -89,8 +124,27 @@ namespace DoAn.QuanLyBanHang
             txtdanhtinh.Text = "";
             txttimkiem.Text = "";
             Random rd = new Random();
-            int randomNumber1 = rd.Next(100000);
-            int randomNumber2 = rd.Next(100000, 1000000);
+            int randomCode;
+            int randomNumber1;
+            int randomNumber2;
+            do
+            {
+                randomCode = rd.Next(100000, 1000000); // Tạo mã từ 100000 đến 999999
+            } while (randomCode == lastCode); // Đảm bảo mã mới không trùng với mã cuối cùng
+
+            lastCode = randomCode; // Lưu trữ mã này để kiểm tra lần sau
+            txtmakh.Text = randomCode.ToString();
+            do
+            {
+                randomNumber1 = rd.Next(100000, 1000000);
+            } while (randomNumber1 == lastCode || randomNumber1 == randomCode);
+
+            // Tạo số thẻ thành viên ngẫu nhiên không trùng lặp
+            do
+            {
+                randomNumber2 = rd.Next(100000, 1000000);
+            } while (randomNumber2 == lastCode || randomNumber2 == randomCode || randomNumber2 == randomNumber1);
+
             txtttlienhe.Text = randomNumber1.ToString();
             txttthanhvien.Text = randomNumber2.ToString();
             cn = new SqlConnection(chuoiketnoi);
@@ -122,6 +176,7 @@ namespace DoAn.QuanLyBanHang
         {
             txtmakh.ReadOnly = true;
             txtttlienhe.ReadOnly = true;
+            txttthanhvien.ReadOnly = true;
             int i;
             i = tb_kh.CurrentRow.Index;
             txtmakh.Text = tb_kh.Rows[i].Cells[0].Value.ToString();
@@ -138,17 +193,29 @@ namespace DoAn.QuanLyBanHang
         {
             cmd = new SqlCommand("DELETE FROM ThongTinKhachHang WHERE MaKhachHang = '"+txtmakh.Text+"'",cn);
             cmd.ExecuteNonQuery();
-            SqlCommand cmd1 = new SqlCommand("DELETE FROM ThongTinLienHe WHERE MaThongTinLienHe = '"+txtttlienhe.Text+"'", cn);
-            cmd1.ExecuteNonQuery();
             loaddata();
         }
         public void timkiem(String keywords, String searchText)
         {
-            cmd = new SqlCommand($"SELECT* FROM ThongTinKhachHang WHERE {keywords} like @searchText", cn);
+            string query = @"SELECT 
+                        MaKhachHang AS [Mã khách hàng],
+                        TenKhachHang AS [Tên khách hàng],
+                        NgaySinh AS [Ngày sinh],
+                        SDT AS [Số điện thoại],
+                        DiaChi AS [Địa chỉ],
+                        MaThongTinLienHe AS [Mã thông tin liên hệ],
+                        MaTheThanhVien AS [Mã thẻ thành viên],
+                        DanhTinh AS [Danh tính]
+                    FROM ThongTinKhachHang
+                    WHERE " + keywords + " LIKE @searchText";
+
+            SqlCommand cmd = new SqlCommand(query, cn);
             cmd.Parameters.AddWithValue("@searchText", "%" + searchText + "%");
-            dta.SelectCommand = cmd;
-            dt.Clear();
+
+            SqlDataAdapter dta = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
             dta.Fill(dt);
+
             tb_kh.DataSource = dt;
         }
         private void button7_Click(object sender, EventArgs e)
@@ -157,9 +224,6 @@ namespace DoAn.QuanLyBanHang
             String keywords = cbtimkiem.Text;
             switch (keywords)
             {
-                case "Mã khách hàng":
-                    keywords = "MaKhachHang";
-                    break;
                 case "Tên khách hàng":
                     keywords = "TenKhachHang";
                     break;
@@ -184,6 +248,43 @@ namespace DoAn.QuanLyBanHang
                 
             }
             timkiem(keywords, text);
+        }
+
+        private void txttimkiem_TextChanged(object sender, EventArgs e)
+        {
+            String text = txttimkiem.Text;
+            String keywords = cbtimkiem.Text;
+            switch (keywords)
+            {
+                case "Tên khách hàng":
+                    keywords = "TenKhachHang";
+                    break;
+                case "Ngày sinh":
+                    keywords = "NgaySinh";
+                    break;
+                case "Số điện thoại":
+                    keywords = "SDT";
+                    break;
+                case "Địa chỉ":
+                    keywords = "DiaChi";
+                    break;
+                case "Mã thông tin liên hệ":
+                    keywords = "MaThongTinLienHe";
+                    break;
+                case "Mã thẻ thành viên":
+                    keywords = "MaTheThanhVien";
+                    break;
+                case "Danh tính":
+                    keywords = "DanhTinh";
+                    break;
+
+            }
+            timkiem(keywords, text);
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

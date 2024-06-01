@@ -16,5 +16,10 @@ namespace DoAn.QuanLyKho
         {
             InitializeComponent();
         }
+
+        private void HienThiThongTinNhaCungCap_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

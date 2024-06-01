@@ -31,7 +31,6 @@ D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\bin\Debug\DoAn.exe.config
 D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\bin\Debug\DoAn.exe
 D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\bin\Debug\DoAn.pdb
 D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.csproj.AssemblyReference.cache
-D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.BaoCaoThongKe.BaoCaoDoanhThu.resources
 D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.BaoCaoThongKe.ThongKeBanHang.resources
 D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.BaoCaoThongKe.ThongKeKho.resources
 D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.HeThongQuanLyBanHang.resources
@@ -39,16 +38,11 @@ D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.Properties.Resources.reso
 D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.QuanLyBanHang.LapHoaDon.resources
 D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.QuanLyBanHang.QuanLySanPham.resources
 D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.QuanLyBanHang._1.resources
-D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.QuanLyBanHang.TaoTheThanhVien.resources
-D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.QuanLyBanHang.ThanhToanChoKhachHang.resources
 D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.QuanLyBanHang.TimHoaDon.resources
-D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.QuanLyBanHang.HienThiThongTinKhachHang.resources
 D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.QuanLyBanHang.TongHopDuLieuBanHang.resources
 D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.QuanLyBanHang.NhapThongTinSuCo.resources
-D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.QuanLyKho.CapNhatTonKho.resources
 D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.QuanLyKho.DatHangNhaCungCap.resources
 D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.QuanLyKho.HienThiThongTinNhaCungCap.resources
-D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.QuanLyKho.KiemTraTonKho.resources
 D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.QuanLyKho.NhapHangNhaCungCap.resources
 D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.QuanLyKho.NhapThongTinNhaCungCap.resources
 D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.QuanLyKho.HienThiHoaDonNhaCungCap.resources
@@ -56,3 +50,4 @@ D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.csproj.GenerateResource.c
 D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.csproj.CoreCompileInputs.cache
 D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.exe
 D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.pdb
+D:\Workspace\C#\QuanLyBanHang\DoAn\DoAn\obj\Debug\DoAn.QuanLyKho.KiemTraTonKho.resources
